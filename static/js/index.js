@@ -117,7 +117,8 @@ function transformfile() {
   $('#status').text("transform...");
 
   var zerorpc = require("zerorpc");
-  var client = new zerorpc.Client({timeout: 86400});
+  var client = new zerorpc.Client({ timeout: 3600*24, heartbeatInterval: 3600*1000*24});
+
   client.connect("tcp://127.0.0.1:42142");
   client.invoke("dotranform", $("#input_filepath").val(), (error, res) =>{
     $('#progress-bar-transform').css('width', '100%');
@@ -145,4 +146,14 @@ function GetProgressWidth(selector) {
   var reg = /\d+/g;
   var result_width = width.match(reg);
   return result_width;
+}
+
+function show(section) {
+  if (section === 'top'){
+    $("#button-addon2").attr("disabled",true);
+    $("#output_filepath").attr("disabled",true);
+  }else if(section === 'bottom'){
+    $("#button-addon2").removeAttr("disabled");
+    $("#output_filepath").removeAttr("disabled");
+  }
 }

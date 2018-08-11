@@ -134,7 +134,8 @@ class Transform(object):
             pickle.dump(filepath_json, f)
 
         cores = multiprocessing.cpu_count()
-        pool = multiprocessing.Pool(processes=max(cores - 2, 2))
+        #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
+        pool = multiprocessing.Pool(processes=max(int(cores / 2), 2))
         pool.map(partial(IoOperat_multi, tmpfile), chunks)
         pool.close()
         pool.join()  # 主进程阻塞等待子进程的退出
@@ -155,7 +156,7 @@ class Transform(object):
     def dotranform(self, filepath_vcf):
         file_json = os.path.splitext(filepath_vcf)[0] + ".json"
         self.vcf2json_multi(filepath_vcf, file_json, "tmpdat")
-
+        #self.vcf2json_Single(filepath_vcf, file_json)
         # if os.path.splitext(filepath_vcf)[1] == ".gz" or filesize_vcf <= 100 * 1024 * 1024:
         #     # 100M文件以下使用单进程
         #     # gzip压缩文件需要用单进程处理,原因未知
@@ -167,7 +168,7 @@ class Transform(object):
         # return "complete"
 
 if __name__ == "__main__":
-    s = zerorpc.Server(Transform())
+    s = zerorpc.Server(Transform(), heartbeat=None)
     s.bind("tcp://0.0.0.0:42142")
     s.run()
 # if __name__ == "__main__":

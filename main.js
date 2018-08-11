@@ -23,7 +23,7 @@ const exitPyProc = () => {
 };
 
 
-//app.on('ready', createPyProc)
+app.on('ready', createPyProc)
 app.on('will-quit', exitPyProc)
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
