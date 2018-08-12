@@ -165,6 +165,31 @@ class Transform(object):
         self.vcf2json_multi(filepath_vcf, filepath_json, "tmpdat")
 
 
+    def preview(self, filepath_vcf):
+        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['*'], chunk_length=2)
+        #get first 2 lines for example
+        #get json
+        for chunker in chunks:
+            recordstring = self.chunker2string(chunker, fields, samples)
+            break
+        #get vcf
+        linenum = 0
+        vcfline = str()
+        with open(filepath_vcf) as file:
+            while True:
+                line = file.readline()
+                if not line:
+                    break
+                else:
+                    if line[1] != '#':
+                        vcfline += line
+                        linenum += 1
+                        if linenum == 3:
+                            break
+
+        result = {"vcf": vcfline, "json": recordstring}
+        return result
+
 if __name__ == "__main__":
     s = zerorpc.Server(Transform(), heartbeat=None)
     s.bind("tcp://0.0.0.0:42142")

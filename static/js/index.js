@@ -183,3 +183,31 @@ function show(section) {
     $("#output_filepath").removeAttr("disabled");
   }
 }
+
+function preview() {
+
+  const {BrowserWindow} = require('electron').remote;
+  const path = require('path');
+  let win = new BrowserWindow({width: 1016, height: 600,autoHideMenuBar:true
+    //,resizable: false
+  });
+  win.on('closed', () => {
+    win = null
+  });
+  // 加载URL
+  var modalPath = path.join('file://', __dirname, '/template/preview.html?vcffile=');
+  modalPath += $("#input_filepath").val();
+  win.loadURL(modalPath);
+
+  // var zerorpc = require("zerorpc");
+  // var client = new zerorpc.Client({ timeout: 3600*24, heartbeatInterval: 3600*1000*24});
+  // client.connect("tcp://127.0.0.1:42142");
+  // client.invoke("preview", $("#input_filepath").val(), (error, res) =>{
+  //   if(error) {
+  //     $('#status').text(error);
+  //   } else {
+  //     $('#status')
+  //       .text("transform complete!");
+  //   }
+  // })
+}

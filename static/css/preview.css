@@ -1,0 +1,41 @@
+body, html {
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    background: #e8e8e8;
+}
+
+.testarea{
+    width: 400px;
+    height: 500px;
+    resize:none;
+    /*word-wrap:normal;*/
+    /*wrap:soft;*/
+}
+
+p.title01 {
+    color: #eb8148;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.testarea-right{
+    /*margin-left: 100px;*/
+}
+
+.testarea-left{
+    margin-left: 30px;
+}
+
+.table{
+    background: white;
+}
+
+/*单元格内容过长自动隐藏*/
+.gridtitle{
+    text-overflow: ellipsis; /*超长部分以...代替*/
+    white-space: nowrap; /*文本不换行*/
+    max-width: 200px; /*最大宽度*/
+    overflow: hidden; /*超长部分隐藏掉*/
+}
