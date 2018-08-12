@@ -36,95 +36,87 @@ class MyEncoder(json.JSONEncoder):
         else:
             return json.JSONEncoder.default(self, obj)
 
-def IoOperat_multi(tmpfile, chunker):
-    # tmpfile = "value_" + md5 + ".dat"
-    with open(tmpfile, "rb") as f:
-        fields = pickle.load(f)
-        samples = pickle.load(f)
-        headers = pickle.load(f)
-        filepath_json = pickle.load(f)
-
-    recordstring = str()
-    li = []
-    for i in range(chunker[1]):
-        recorddict1 = {
-            k_field[9:]: [chunker[0][k_field][i][m] for m in range(chunker[0][k_field][i].size)] if type(
-                chunker[0][k_field][i]) == np.ndarray else chunker[0][k_field][i] for k_field in fields if
-        'variants/' in k_field
-        }
-        recordsamples = []
-        for k_sample, j in zip(samples, range(0, samples.size)):
-            recordsample1 = {
-                "SampleNo": k_sample
-            }
-            recordsample2 = {
-                k_field: [chunker[0][k_field][i][j][n] for n in range(chunker[0][k_field][i][j].size)] if type(
-                    chunker[0][k_field][i][j]) == np.ndarray else chunker[0][k_field][i][j] for k_field in fields if
-            "calldata/" in k_field
-            }
-            recordsample = dict(recordsample1, **recordsample2)
-            recordsamples.append(recordsample)
-        recorddict2 = {
-            "Samples": recordsamples
-        }
-        recorddict = dict(recorddict1, **recorddict2)
-        li.append(recorddict)
-    recordstring = json.dumps(li, cls=MyEncoder) + '\n'
-    lock = LockFile(filepath_json)
-    lock.acquire()
-    with open(filepath_json, "a") as fp:
-        fp.write(recordstring)
-    lock.release()
-    return
-
 
 class Transform(object):
-    def test(self, str):
-        return "hello " + str
+    def addhead(self, header, filepath_json):
+        record_head = []
+        for line in header:
+            record_head.append(line)
+        record = {
+           "header": record_head
+        }
+        with open(filepath_json, 'a') as fp:
+            recordstring = json.dumps(record, cls=MyEncoder) + '\n'
+            fp.write(recordstring)
+        return
+
+    def chunker2string(self, chunker, fields, samples):
+        li = []
+        for i in range(chunker[1]):
+            recorddict1 = {
+                k_field[9:]: [chunker[0][k_field][i][m] for m in range(chunker[0][k_field][i].size)] if type(
+                    chunker[0][k_field][i]) == np.ndarray else chunker[0][k_field][i] for k_field in fields if
+                'variants/' in k_field
+            }
+            recordsamples = []
+            for k_sample, j in zip(samples, range(samples.size)):
+                recordsample1 = {
+                    "SampleNo": k_sample
+                }
+                recordsample2 = {
+                    k_field[9:]: [chunker[0][k_field][i][j][n] for n in
+                              range(chunker[0][k_field][i][j].size)] if type(
+                        chunker[0][k_field][i][j]) == np.ndarray else chunker[0][k_field][i][j] for k_field in
+                    fields if "calldata/" in k_field
+                }
+                recordsample = dict(recordsample1, **recordsample2)
+                recordsamples.append(recordsample)
+            recorddict2 = {
+                "Samples": recordsamples
+            }
+
+            recorddict = dict(recorddict1, **recorddict2)
+            li.append(recorddict)
+        recordstring = json.dumps(li, cls=MyEncoder) + '\n'
+        return recordstring
+
+    def IoOperat_multi(self, tmpfile, chunker):
+        # tmpfile = "value_" + md5 + ".dat"
+        with open(tmpfile, "rb") as f:
+            fields = pickle.load(f)
+            samples = pickle.load(f)
+            headers = pickle.load(f)
+            filepath_json = pickle.load(f)
+        recordstring = self.chunker2string(chunker, fields, samples)
+        lock = LockFile(filepath_json)
+        lock.acquire()
+        with open(filepath_json, "a") as fp:
+            fp.write(recordstring)
+        lock.release()
+        return
+
 
     def vcf2json_Single(self, filepath_vcf, filepath_json):
-
         fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['*'])
+
+        if os.path.exists(filepath_json):
+            os.remove(filepath_json)
+        self.addhead(headers[0], filepath_json)
+
         with open(filepath_json, 'a') as fp:
             for chunker in chunks:
-                recordstring = str()
-                li = []
-                for i in range(0, chunker[1]):
-                    # if i % 10000 == 0 :
-                    #     print("i: ", i)
-                    recorddict1 = {
-                        k_field[9:]: [chunker[0][k_field][i][m] for m in range(chunker[0][k_field][i].size)] if type(
-                            chunker[0][k_field][i]) == np.ndarray else chunker[0][k_field][i] for k_field in fields if
-                    'variants/' in k_field
-                    }
-                    recordsamples = []
-                    for k_sample, j in zip(samples, range(0, samples.size)):
-                        recordsample1 = {
-                            "SampleNo": k_sample
-                        }
-                        recordsample2 = {
-                            k_field: [chunker[0][k_field][i][j][n] for n in
-                                      range(chunker[0][k_field][i][j].size)] if type(
-                                chunker[0][k_field][i][j]) == np.ndarray else chunker[0][k_field][i][j] for k_field in
-                        fields if "calldata/" in k_field
-                        }
-                        recordsample = dict(recordsample1, **recordsample2)
-                        recordsamples.append(recordsample)
-                    recorddict2 = {
-                        "Samples": recordsamples
-                    }
-
-                    recorddict = dict(recorddict1, **recorddict2)
-                    li.append(recorddict)
-                recordstring = json.dumps(li, cls=MyEncoder) + '\n'
+                recordstring = self.chunker2string(chunker, fields, samples)
                 fp.write(recordstring)
-
         return
 
 
     def vcf2json_multi(self, filepath_vcf, filepath_json, md5):
-
         fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=50)
+
+        if os.path.exists(filepath_json):
+            os.remove(filepath_json)
+        #增加原vcf文件的头部信息, 用于逆向转换
+        self.addhead(headers[0], filepath_json)
 
         tmpfile = "value_" + md5 + ".dat"
         with open(tmpfile, "wb") as f:
@@ -136,7 +128,7 @@ class Transform(object):
         cores = multiprocessing.cpu_count()
         #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
         pool = multiprocessing.Pool(processes=max(int(cores / 2), 2))
-        pool.map(partial(IoOperat_multi, tmpfile), chunks)
+        pool.map(partial(self.IoOperat_multi, tmpfile), chunks)
         pool.close()
         pool.join()  # 主进程阻塞等待子进程的退出
         os.remove(tmpfile)  # 删除该分片，节约空间
@@ -157,6 +149,7 @@ class Transform(object):
         file_json = os.path.splitext(filepath_vcf)[0] + ".json"
         self.vcf2json_multi(filepath_vcf, file_json, "tmpdat")
         #self.vcf2json_Single(filepath_vcf, file_json)
+
         # if os.path.splitext(filepath_vcf)[1] == ".gz" or filesize_vcf <= 100 * 1024 * 1024:
         #     # 100M文件以下使用单进程
         #     # gzip压缩文件需要用单进程处理,原因未知
@@ -167,6 +160,7 @@ class Transform(object):
         #     # 转换函数会创建进程池, 使用文件进行参数传递, 为了让并发请求不共享这个文件, 所以此处创建进程
         # return "complete"
 
+    #with output path
     def dotransformWithOutPath(self, filepath_vcf, filepath_json):
         self.vcf2json_multi(filepath_vcf, filepath_json, "tmpdat")
 
