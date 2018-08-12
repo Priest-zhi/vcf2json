@@ -167,6 +167,10 @@ class Transform(object):
         #     # 转换函数会创建进程池, 使用文件进行参数传递, 为了让并发请求不共享这个文件, 所以此处创建进程
         # return "complete"
 
+    def dotransformWithOutPath(self, filepath_vcf, filepath_json):
+        self.vcf2json_multi(filepath_vcf, filepath_json, "tmpdat")
+
+
 if __name__ == "__main__":
     s = zerorpc.Server(Transform(), heartbeat=None)
     s.bind("tcp://0.0.0.0:42142")

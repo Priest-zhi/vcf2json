@@ -87,13 +87,17 @@ $('.ship').click(function () {
   $('#fourth').addClass('rightside_active');
 });
 
+var mode = "top";
+
 $(function () {
   $('#progress-control').hide();  //隐藏进度条
 });
 
 function selectinputfile() {
   const {dialog} = require('electron').remote;
-  console.log(dialog.showOpenDialog({properties: ['openFile']},(files) => {
+  console.log(dialog.showOpenDialog({properties: ['openFile'], filters: [
+      {name: 'vcf file', extensions: ['vcf']}
+    ]},(files) => {
     if (files) {
       $("#input_filepath").val(files);
     }
@@ -102,7 +106,7 @@ function selectinputfile() {
 
 function selectoutputfile() {
   const {dialog} = require('electron').remote;
-  console.log(dialog.showOpenDialog({properties: ['openFile']},(files) => {
+  console.log(dialog.showOpenDialog({properties: ['openDirectory']},(files) => {
     if (files) {
       $("#output_filepath").val(files);
     }
@@ -120,16 +124,36 @@ function transformfile() {
   var client = new zerorpc.Client({ timeout: 3600*24, heartbeatInterval: 3600*1000*24});
 
   client.connect("tcp://127.0.0.1:42142");
-  client.invoke("dotranform", $("#input_filepath").val(), (error, res) =>{
-    $('#progress-bar-transform').css('width', '100%');
-    $('#progress-bar-transform').text('100%');
-    if(error) {
-      $('#status').text(error);
-    } else {
-      $('#status')
-        .text("transform complete!");
-    }
-  })
+  if (mode === "top"){
+    client.invoke("dotranform", $("#input_filepath").val(), (error, res) =>{
+      $('#progress-bar-transform').css('width', '100%');
+      $('#progress-bar-transform').text('100%');
+      if(error) {
+        $('#status').text(error);
+      } else {
+        $('#status')
+          .text("transform complete!");
+      }
+    })
+  }else if(mode === "bottom"){
+    var fileName = $("#input_filepath").val();
+    //正则表达式获取文件名，不带后缀
+    var strFileName=fileName.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi,"$1");
+
+    //var strFileName = fileName.substring(fileName.lastIndexOf("\\")+1);
+    var filepath_json = $('#output_filepath').val()+ '\\' + strFileName + '.json';
+    client.invoke("dotransformWithOutPath", $("#input_filepath").val(),filepath_json, (error, res) =>{
+      $('#progress-bar-transform').css('width', '100%');
+      $('#progress-bar-transform').text('100%');
+      if(error) {
+        $('#status').text(error);
+      } else {
+        $('#status')
+          .text("transform complete!");
+      }
+    })
+  }
+
 }
 
 //伪进度条
@@ -150,9 +174,11 @@ function GetProgressWidth(selector) {
 
 function show(section) {
   if (section === 'top'){
+    mode="top";
     $("#button-addon2").attr("disabled",true);
     $("#output_filepath").attr("disabled",true);
   }else if(section === 'bottom'){
+    mode="bottom";
     $("#button-addon2").removeAttr("disabled");
     $("#output_filepath").removeAttr("disabled");
   }

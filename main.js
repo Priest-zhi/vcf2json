@@ -22,9 +22,8 @@ const exitPyProc = () => {
   pyPort = null;
 };
 
-
-app.on('ready', createPyProc)
-app.on('will-quit', exitPyProc)
+app.on('ready', createPyProc);
+app.on('will-quit', exitPyProc);
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
@@ -39,6 +38,8 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 964,
     height: 600,
+    autoHideMenuBar:true
+    //,resizable: false
   });
 
   // and load the index.html of the app.
