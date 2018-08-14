@@ -91,6 +91,14 @@ var mode = "top";
 
 $(function () {
   $('#progress-control').hide();  //隐藏进度条
+  //绑定外部链接
+  const {shell} = require('electron')
+
+  const exLinksBtn = document.getElementById('a_github')
+
+  exLinksBtn.addEventListener('click', (event) => {
+    shell.openExternal('https://github.com/Priest-zhi/vcf2json')
+  })
 });
 
 function selectinputfile() {
@@ -114,6 +122,13 @@ function selectoutputfile() {
 }
 
 function transformfile() {
+  if (!$("#input_filepath").val()){
+    layui.use('layer', function(){
+      layer = layui.layer;
+      layer.msg('invalid file path');
+    });
+    return;
+  }
   var timer =  window.setInterval(progressAdd,1000);//每隔1min调用一次show函数, 防止用户以为卡死
   $('#progress-control').show();
   $('#progress-bar-transform').css('width', '1%');
@@ -125,7 +140,7 @@ function transformfile() {
 
   client.connect("tcp://127.0.0.1:42142");
   if (mode === "top"){
-    client.invoke("dotranform", $("#input_filepath").val(), (error, res) =>{
+    client.invoke("dotranform", $("#input_filepath").val(), $('#select_jsonformat').val(), (error, res) =>{
       $('#progress-bar-transform').css('width', '100%');
       $('#progress-bar-transform').text('100%');
       if(error) {
@@ -189,7 +204,7 @@ function preview() {
   const {BrowserWindow} = require('electron').remote;
   const path = require('path');
   let win = new BrowserWindow({width: 1016, height: 600,autoHideMenuBar:true
-    //,resizable: false
+    ,resizable: false
   });
   win.on('closed', () => {
     win = null
@@ -197,6 +212,7 @@ function preview() {
   // 加载URL
   var modalPath = path.join('file://', __dirname, '/template/preview.html?vcffile=');
   modalPath += $("#input_filepath").val();
+  modalPath += "&mode=" + $("#select_jsonformat").val();
   win.loadURL(modalPath);
 
   // var zerorpc = require("zerorpc");

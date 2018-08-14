@@ -262,8 +262,10 @@ ul, li {
 		  transition: all .2s ease-out;
 }
 
-.icon.active {
-  fill: #E74C3C;
+.icon.active{
+  	fill: #E74C3C;
+	/*background: #E74C3C;*/
+	color: #E74C3C;
 }
 
 .icon.big {
@@ -429,8 +431,13 @@ ul, li {
   padding-right: 30px;
 }
 #right-side #first.rightside_active, #right-side #second.rightside_active, #right-side #third.rightside_active, #right-side #fourth.rightside_active {
-  margin-top: 30px;
+  margin-top: 1px;
   opacity: 1;
   -webkit-transition: all .6s ease-in-out;
 		  transition: all .6s ease-in-out;
+}
+.form-check {
+	position: relative;
+	display: block;
+	padding-left: 9.25rem;
 }

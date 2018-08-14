@@ -3,6 +3,7 @@ var IconPlus = "fa fa-plus-square-o";
 var IconMinus = "fa fa-minus-square-o";
 
 
+
 function GetQueryString(name) {
   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
   var r = window.location.search.substr(1)
@@ -140,7 +141,11 @@ function ParseJsonData2(strdata) {
           break;
       }
     }
-    rowJson["FILTER"] = filter_row;
+    //filter
+    for (var k_filter in filter_row){
+      rowJson[k_filter] = filter_row[k_filter];
+    }
+    //rowJson["FILTER"] = filter_row;
     //info
     for (var k in info_row){
       rowJson[k] = info_row[k];
@@ -162,8 +167,19 @@ function CreatColums(data) {
   var rowData = data instanceof Array? data[0] : data;
   for (var k in rowData){
     var column = {};
-    column.data = k;
     column.title = k;
+    // //如果key中存在'.' 改为'_' 否则datatables报错
+    // if (k.indexOf('.')==-1){
+    //   for (var line in data){
+    //     var val = line[k];
+    //
+    //     delete line[k];
+    //     line
+    //   }
+    //
+    // }
+    column.data = k;
+
     column.className = 'gridtitle ';
     if (rowData[k] instanceof Object && (k === 'Info' || k === 'Samples' || k === 'FILTER')){
       column.className += 'details-control';
@@ -245,12 +261,20 @@ function CreatejsonTable(tableID, data, IsRoot) {
 
 
 $(function () {
+  // $('#p1').hide();
+  // $('#p2').hide();
+  $.busyLoadFull("show", { spinner: "accordion"});
   var vcffilepath = GetQueryString("vcffile");
+  var mode = GetQueryString("mode");
   if (!!vcffilepath) {
     var zerorpc = require('zerorpc');
     var client = new zerorpc.Client({ timeout: 3600 * 24, heartbeatInterval: 3600 * 1000 * 24 });
     client.connect('tcp://127.0.0.1:42142');
-    client.invoke('preview', vcffilepath, (error, res) => {
+    //MergeAll
+    client.invoke('preview', vcffilepath, mode, (error, res) => {
+      $.busyLoadFull("hide");
+      $('#p1').show();
+      $('#p2').show();
       if (error) {
         layui.use('layer', function () {
           layer = layui.layer;
@@ -262,6 +286,7 @@ $(function () {
       }
     });
   }else{
+    $.busyLoadFull("hide");
     layui.use('layer', function(){
       layer = layui.layer;
       layer.msg('invalid file path');

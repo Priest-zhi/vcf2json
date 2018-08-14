@@ -39,7 +39,7 @@ const createWindow = () => {
     width: 964,
     height: 600,
     autoHideMenuBar:true
-    //,resizable: false
+    ,resizable: false
   });
 
   // and load the index.html of the app.

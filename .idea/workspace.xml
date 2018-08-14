@@ -2,147 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="565dd63b-3a86-4e86-b18f-4b9fac323579" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/preview.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/preview.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.foundation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.foundation.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.jqueryui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.jqueryui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.semanticui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/dataTables.semanticui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/jquery.dataTables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/css/jquery.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/images/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/images/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.foundation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.foundation.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.jqueryui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.jqueryui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.semanticui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/dataTables.semanticui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/DataTables-1.10.18/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/layui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/layui.mobile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/code.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/layer/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/layer/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/font/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/font/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/font/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/font/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/11.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/12.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/13.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/14.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/15.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/17.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/18.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/19.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/20.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/21.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/22.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/23.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/24.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/25.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/26.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/27.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/28.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/29.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/30.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/31.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/32.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/33.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/34.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/35.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/36.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/37.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/38.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/39.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/40.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/41.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/42.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/43.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/44.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/45.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/46.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/47.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/48.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/49.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/50.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/51.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/52.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/53.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/54.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/55.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/56.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/57.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/58.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/59.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/60.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/61.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/62.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/63.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/64.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/65.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/66.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/67.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/68.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/69.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/70.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/71.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/images/face/9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/code.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/element.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/flow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/layedit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/laypage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/laytpl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/rate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/tree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/lay/modules/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/layui.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/layui-v2.3.0/layui/layui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/preview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/busy-load/app.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/busy-load/app.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/preview.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/preview.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/preview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/preview.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/preview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/transform.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -158,24 +29,27 @@
     <session id="-1119449651">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="13" />
           <entry key="dat" value="1" />
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="icns" value="1" />
           <entry key="ico" value="1" />
-          <entry key="js" value="33" />
-          <entry key="json" value="4" />
-          <entry key="py" value="5" />
+          <entry key="js" value="38" />
+          <entry key="json" value="6" />
+          <entry key="py" value="6" />
           <entry key="svg" value="1" />
           <entry key="ts" value="11" />
           <entry key="txt" value="1" />
@@ -184,36 +58,36 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="13" />
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
-          <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="33" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="38" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="SVG" value="1" />
           <entry key="TypeScript" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="3" />
+          <entry key="ESLintLanguageService" value="6" />
           <entry key="TypeScriptServerServiceImpl" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="109" />
-          <entry key="html" value="1272" />
-          <entry key="js" value="1752" />
+          <entry key="css" value="135" />
+          <entry key="html" value="1555" />
+          <entry key="js" value="2129" />
           <entry key="py" value="133" />
-          <entry key="txt" value="101" />
+          <entry key="txt" value="113" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="109" />
-          <entry key="HTML" value="1272" />
-          <entry key="JavaScript" value="1749" />
-          <entry key="PLAIN_TEXT" value="234" />
+          <entry key="CSS" value="135" />
+          <entry key="HTML" value="1555" />
+          <entry key="JavaScript" value="2126" />
+          <entry key="PLAIN_TEXT" value="246" />
           <entry key="RegExp" value="3" />
         </counts>
       </usages-collector>
@@ -224,27 +98,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="396">
+              <caret line="114" column="108" selection-start-line="114" selection-start-column="100" selection-end-line="114" selection-end-column="108" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="96" column="56" lean-forward="true" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/preview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="440">
+              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -256,13 +142,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/preview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
+            <state relative-caret-position="52">
+              <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
               <folding>
-                <element signature="n#!!block;n#CreatColums#0" />
                 <element signature="n#!!block;n#CreatevcfTable#0" />
-                <element signature="e#46#52#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transform.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -270,17 +172,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/preview.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            <state relative-caret-position="170">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/plugins/busy-load/app.min.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="40" selection-start-line="40" selection-end-line="41" selection-end-column="23" />
+            <state relative-caret-position="506">
+              <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -288,8 +195,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            <state relative-caret-position="482">
+              <caret line="440" column="19" lean-forward="true" selection-start-line="440" selection-start-column="19" selection-end-line="440" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -312,12 +219,12 @@
       <find>.pay</find>
       <find>progress-control</find>
       <find>progress-striped</find>
-      <find>active</find>
       <find>bgcolor-3</find>
       <find>.active</find>
       <find>button-addon1</find>
       <find>heartbeat</find>
       <find>row</find>
+      <find>active</find>
     </findStrings>
     <replaceStrings>
       <replace>.Transformation</replace>
@@ -333,7 +240,6 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/src/test.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/static/plugins/jquery-2.2.js" />
         <option value="$PROJECT_DIR$/static/plugins/jquery-2.2.0.min.js" />
         <option value="$PROJECT_DIR$/static/js/open-file.js" />
@@ -343,13 +249,14 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/transform.py" />
         <option value="$PROJECT_DIR$/views.py" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/template/preview.html" />
+        <option value="$PROJECT_DIR$/static/js/preview.js" />
+        <option value="$PROJECT_DIR$/static/css/preview.css" />
         <option value="$PROJECT_DIR$/static/css/default.css" />
-        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/js/index.js" />
-        <option value="$PROJECT_DIR$/static/css/preview.css" />
-        <option value="$PROJECT_DIR$/static/js/preview.js" />
-        <option value="$PROJECT_DIR$/template/preview.html" />
+        <option value="$PROJECT_DIR$/main.js" />
       </list>
     </option>
   </component>
@@ -421,6 +328,13 @@
             <path>
               <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
               <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="busy-load" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -432,7 +346,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/.bin/electron.cmd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rdf2json" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -451,11 +365,11 @@
       <recent name="E:\code\project\electron\vcf2json\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\project\electron\vcf2json\static\plugins\busy-load" />
       <recent name="E:\code\project\electron\vcf2json\static\plugins" />
       <recent name="E:\code\project\electron\vcf2json\static\css" />
       <recent name="E:\code\project\electron\vcf2json" />
       <recent name="E:\code\project\electron\vcf2json\static\js" />
-      <recent name="E:\code\project\electron\vcf2json\static\plugins\Metro-UI-CSS\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -470,7 +384,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Node.js.electron">
     <configuration name="electron" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$PROJECT_DIR$/node_modules/.bin/electron.cmd" path-to-js-file="$PROJECT_DIR$/main.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -507,7 +421,10 @@
       <workItem from="1533716968521" duration="32203000" />
       <workItem from="1533818000695" duration="1343000" />
       <workItem from="1533819664661" duration="6888000" />
-      <workItem from="1533827728207" duration="70359000" />
+      <workItem from="1533827728207" duration="74104000" />
+      <workItem from="1534132794851" duration="5886000" />
+      <workItem from="1534164301477" duration="5014000" />
+      <workItem from="1534201380036" duration="3760000" />
     </task>
     <task id="LOCAL-00001" summary="1. 删除zerorpc heartbeat&#10;2. 修改 转换时 创建的进程数量">
       <created>1533969995114</created>
@@ -530,11 +447,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534045059732</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. 增加preview 预览功能">
+      <created>1534070786306</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1534070786306</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110793000" />
+    <option name="totallyTimeSpent" value="129198000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -555,7 +479,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49736565" visible="true" weight="0.247557" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49683878" visible="true" weight="0.247557" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49841937" weight="0.5418024" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -563,8 +487,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50263435" side_tool="true" visible="true" weight="0.247557" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49894625" weight="0.34201956" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50316125" side_tool="true" weight="0.247557" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49894625" weight="0.34164858" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -598,23 +522,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="first commit" />
     <MESSAGE value="1. 删除zerorpc heartbeat&#10;2. 修改 转换时 创建的进程数量" />
     <MESSAGE value="1. 增加已定义out目录" />
     <MESSAGE value="1. 增加vcf文件头&#10;2. 优化代码逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 增加vcf文件头&#10;2. 优化代码逻辑" />
+    <MESSAGE value="1. 增加preview 预览功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 增加preview 预览功能" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/electron/electron.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="8779" column="15" selection-start-line="8779" selection-start-column="15" selection-end-line="8779" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/plugins/Metro-UI-CSS/css/metro-all.min.css" />
-    <entry file="file://$PROJECT_DIR$/static/plugins/Metro-UI-CSS/js/metro.min.js" />
     <entry file="file://$PROJECT_DIR$/static/plugins/Metro-UI-CSS/css/schemes/darcula.css" />
     <entry file="file://$PROJECT_DIR$/static/js/open-file.js" />
     <entry file="file://$PROJECT_DIR$/static/plugins/Metro-UI-CSS/mif/metro.json" />
@@ -658,13 +575,7 @@
     <entry file="file://$PROJECT_DIR$/static/plugins/font-awesome-4.7.0/css/font-awesome.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/views.py" />
     <entry file="file://$PROJECT_DIR$/static/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -688,13 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/zerorpc/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -709,23 +613,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transform.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/value_tmpdat.dat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/value_tmpdat.dat" />
     <entry file="file://$PROJECT_DIR$/static/plugins/bootstrap-4.1.3-dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -764,71 +652,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/index.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/busy-load/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="959">
-          <caret line="174" column="24" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
+        <state relative-caret-position="154">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/node_modules/busy-load/src/lib/busy-load.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="193">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/busy-load/dist/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1782" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="40" selection-start-line="40" selection-end-line="41" selection-end-column="23" />
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/preview.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/static/plugins/busy-load/app.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/preview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
+        <state relative-caret-position="52">
+          <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
           <folding>
-            <element signature="n#!!block;n#CreatColums#0" />
             <element signature="n#!!block;n#CreatevcfTable#0" />
-            <element signature="e#46#52#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/preview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="440">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/preview.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="440" column="19" lean-forward="true" selection-start-line="440" selection-start-column="19" selection-end-line="440" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="114" column="108" selection-start-line="114" selection-start-column="100" selection-end-line="114" selection-end-column="108" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#label#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="96" column="56" lean-forward="true" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="21" />
         </state>
       </provider>
     </entry>
