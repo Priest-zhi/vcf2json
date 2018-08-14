@@ -157,7 +157,7 @@ function transformfile() {
 
     //var strFileName = fileName.substring(fileName.lastIndexOf("\\")+1);
     var filepath_json = $('#output_filepath').val()+ '\\' + strFileName + '.json';
-    client.invoke("dotransformWithOutPath", $("#input_filepath").val(),filepath_json, (error, res) =>{
+    client.invoke("dotransformWithOutPath", $("#input_filepath").val(),filepath_json,$('#select_jsonformat').val(), (error, res) =>{
       $('#progress-bar-transform').css('width', '100%');
       $('#progress-bar-transform').text('100%');
       if(error) {

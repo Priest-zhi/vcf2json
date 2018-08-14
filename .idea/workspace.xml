@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="565dd63b-3a86-4e86-b18f-4b9fac323579" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/plugins/busy-load/app.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugins/busy-load/app.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transform.spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/preview.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/preview.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/preview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/preview.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/preview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/transform.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -47,12 +42,12 @@
           <entry key="html" value="5" />
           <entry key="icns" value="1" />
           <entry key="ico" value="1" />
-          <entry key="js" value="38" />
-          <entry key="json" value="6" />
-          <entry key="py" value="6" />
+          <entry key="js" value="39" />
+          <entry key="json" value="8" />
+          <entry key="py" value="7" />
           <entry key="svg" value="1" />
           <entry key="ts" value="11" />
-          <entry key="txt" value="1" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -60,9 +55,9 @@
           <entry key="CSS" value="13" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
-          <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="38" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="JSON" value="8" />
+          <entry key="JavaScript" value="39" />
+          <entry key="PLAIN_TEXT" value="10" />
           <entry key="SVG" value="1" />
           <entry key="TypeScript" value="11" />
         </counts>
@@ -77,17 +72,19 @@
         <counts>
           <entry key="css" value="135" />
           <entry key="html" value="1555" />
-          <entry key="js" value="2129" />
+          <entry key="js" value="2168" />
+          <entry key="json" value="2" />
           <entry key="py" value="133" />
-          <entry key="txt" value="113" />
+          <entry key="txt" value="168" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="135" />
           <entry key="HTML" value="1555" />
-          <entry key="JavaScript" value="2126" />
-          <entry key="PLAIN_TEXT" value="246" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="2165" />
+          <entry key="PLAIN_TEXT" value="301" />
           <entry key="RegExp" value="3" />
         </counts>
       </usages-collector>
@@ -98,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="114" column="108" selection-start-line="114" selection-start-column="100" selection-end-line="114" selection-end-column="108" />
+            <state relative-caret-position="154">
+              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -120,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="96" column="56" lean-forward="true" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+            <state relative-caret-position="358">
+              <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -129,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/preview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state relative-caret-position="286">
+              <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -140,13 +137,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/preview.js">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
-              <folding>
-                <element signature="n#!!block;n#CreatevcfTable#0" />
-              </folding>
+            <state relative-caret-position="426">
+              <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -154,17 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transform.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="79">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -173,30 +158,39 @@
         <entry file="file://$PROJECT_DIR$/static/css/preview.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/plugins/busy-load/app.min.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="21" />
+            <state relative-caret-position="120">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Appout/transform-win32-x64/resources/app/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="44" column="2" lean-forward="true" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/default.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
-              <caret line="440" column="19" lean-forward="true" selection-start-line="440" selection-start-column="19" selection-end-line="440" selection-end-column="19" />
+              <caret line="440" column="19" selection-start-line="440" selection-start-column="19" selection-end-line="440" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -225,6 +219,9 @@
       <find>heartbeat</find>
       <find>row</find>
       <find>active</find>
+      <find>babel-plugin-transformasync--to-generator</find>
+      <find>babel-plugin-transform-async--to-generator</find>
+      <find>openDevTools</find>
     </findStrings>
     <replaceStrings>
       <replace>.Transformation</replace>
@@ -247,16 +244,17 @@
         <option value="$PROJECT_DIR$/static/plugins/font-awesome-4.7.0/HELP-US-OUT.txt" />
         <option value="$PROJECT_DIR$/static/plugins/bootstrap-4.1.3-dist/js/popper.min.js" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/transform.py" />
         <option value="$PROJECT_DIR$/views.py" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/template/preview.html" />
         <option value="$PROJECT_DIR$/static/js/preview.js" />
         <option value="$PROJECT_DIR$/static/css/preview.css" />
         <option value="$PROJECT_DIR$/static/css/default.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/transform.py" />
         <option value="$PROJECT_DIR$/static/js/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/Appout/transform-win32-x64/resources/app/main.js" />
       </list>
     </option>
   </component>
@@ -275,14 +273,16 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/Appout/transform-win32-x64/resources/app/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/Appout/transform-win32-x64/resources/app/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -301,36 +301,6 @@
             <path>
               <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
               <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vcf2json" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="busy-load" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vcf2json" type="b2602c69:ProjectViewProjectNode" />
@@ -365,10 +335,10 @@
       <recent name="E:\code\project\electron\vcf2json\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\project\electron\vcf2json" />
       <recent name="E:\code\project\electron\vcf2json\static\plugins\busy-load" />
       <recent name="E:\code\project\electron\vcf2json\static\plugins" />
       <recent name="E:\code\project\electron\vcf2json\static\css" />
-      <recent name="E:\code\project\electron\vcf2json" />
       <recent name="E:\code\project\electron\vcf2json\static\js" />
     </key>
   </component>
@@ -424,7 +394,7 @@
       <workItem from="1533827728207" duration="74104000" />
       <workItem from="1534132794851" duration="5886000" />
       <workItem from="1534164301477" duration="5014000" />
-      <workItem from="1534201380036" duration="3760000" />
+      <workItem from="1534201380036" duration="13051000" />
     </task>
     <task id="LOCAL-00001" summary="1. 删除zerorpc heartbeat&#10;2. 修改 转换时 创建的进程数量">
       <created>1533969995114</created>
@@ -454,11 +424,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534070786306</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1. 增加自定义json格式&#10;2. 修改about us&#10;3. 增加preview等待动画&#10;4. 相关界面调整">
+      <created>1534205205869</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534205205869</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129198000" />
+    <option name="totallyTimeSpent" value="138489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -470,17 +447,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49683878" visible="true" weight="0.247557" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49841937" weight="0.5418024" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49683878" weight="0.247557" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49841937" visible="true" weight="0.41150922" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49894625" weight="0.329718" />
@@ -529,11 +506,28 @@
     <MESSAGE value="1. 增加已定义out目录" />
     <MESSAGE value="1. 增加vcf文件头&#10;2. 优化代码逻辑" />
     <MESSAGE value="1. 增加preview 预览功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 增加preview 预览功能" />
+    <MESSAGE value="1. 增加自定义json格式&#10;2. 修改about us&#10;3. 增加preview等待动画&#10;4. 相关界面调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 增加自定义json格式&#10;2. 修改about us&#10;3. 增加preview等待动画&#10;4. 相关界面调整" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Appout/transform-win32-x64/resources/app/main.js</url>
+          <line>48</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/main.js</url>
+          <line>48</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/plugins/Metro-UI-CSS/css/schemes/darcula.css" />
-    <entry file="file://$PROJECT_DIR$/static/js/open-file.js" />
     <entry file="file://$PROJECT_DIR$/static/plugins/Metro-UI-CSS/mif/metro.json" />
     <entry file="file://$PROJECT_DIR$/static/plugins/assets/demo-btns.js" />
     <entry file="file://$PROJECT_DIR$/static/plugins/assets/ex-links.js" />
@@ -671,20 +665,6 @@
         <state relative-caret-position="-1782" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transform.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -698,20 +678,9 @@
     <entry file="file://$PROJECT_DIR$/static/js/preview.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
+          <caret line="260" selection-start-line="260" selection-end-line="260" />
           <folding>
             <element signature="n#!!block;n#CreatevcfTable#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/preview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -719,21 +688,56 @@
     <entry file="file://$PROJECT_DIR$/static/css/preview.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
-          <caret line="440" column="19" lean-forward="true" selection-start-line="440" selection-start-column="19" selection-end-line="440" selection-end-column="19" />
+          <caret line="440" column="19" selection-start-line="440" selection-start-column="19" selection-end-line="440" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/preview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="114" column="108" selection-start-line="114" selection-start-column="100" selection-end-line="114" selection-end-column="108" />
+        <state relative-caret-position="154">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -750,17 +754,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/index.js">
+    <entry file="file://$PROJECT_DIR$/Appout/transform-win32-x64/resources/app/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="96" column="56" lean-forward="true" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+        <state relative-caret-position="412">
+          <caret line="44" column="2" lean-forward="true" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="21" />
+        <state relative-caret-position="120">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>

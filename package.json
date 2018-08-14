@@ -6,10 +6,11 @@
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package",
+    "packager": "electron-packager ./ transform --platform=win32  --arch=x64  --out=./Appout --overwrite",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "eslint src --color"
+
   },
   "keywords": [],
   "author": "quz",
@@ -55,10 +56,11 @@
     "zerorpc": "^0.9.7"
   },
   "devDependencies": {
-    "babel-plugin-transformasync--to-generator": "^6.24.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "electron-forge": "^5.2.2",
+    "electron-packager": "^12.1.0",
     "electron-prebuilt-compile": "2.0.6",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",

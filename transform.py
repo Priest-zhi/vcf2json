@@ -15,10 +15,9 @@ import zipfile
 from django.http import StreamingHttpResponse
 from wsgiref.util import FileWrapper
 from functools import partial
-import zerorpc
 import time
 import sys
-
+import zerorpc
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -248,6 +247,8 @@ class Transform(object):
         return result
 
 if __name__ == "__main__":
+    #支持打包
+    # multiprocessing.freeze_support()
     s = zerorpc.Server(Transform(), heartbeat=None)
     s.bind("tcp://0.0.0.0:42142")
     s.run()
