@@ -129,7 +129,7 @@ function transformfile() {
     });
     return;
   }
-  var timer =  window.setInterval(progressAdd,1000);//每隔1min调用一次show函数, 防止用户以为卡死
+  var timer =  window.setInterval(progressAdd,1000*60);//每隔1min调用一次show函数, 防止用户以为卡死
   $('#progress-control').show();
   $('#progress-bar-transform').css('width', '1%');
   $('#progress-bar-transform').text('1%');
