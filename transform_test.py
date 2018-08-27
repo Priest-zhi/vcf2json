@@ -61,6 +61,13 @@ def addhead(header, filepath_json):
 def chunker2string(chunker, fields, samples, mode='MergeSamples'):
     li = []
     infoNum = 0
+    #把NaN转换成-1
+    for i in range(chunker[1]):
+        for field in fields:
+            if isinstance(chunker[0][field][i], np.ndarray) and not isinstance(chunker[0][field][i][0], np.str):
+                nanpos = np.isnan(chunker[0][field][i])
+                chunker[0][field][i][nanpos] = -1.0
+
     if mode == 'MergeAll':
         for i in range(chunker[1]):
             #basic
@@ -200,7 +207,8 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
 
     cores = multiprocessing.cpu_count()
     #processnum = max(int(cores / 2), 2)
-    processnum = cores
+    #processnum = cores
+    processnum = 2
     #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
 
     #自己调度迭代器 防止内存溢出

@@ -102,6 +102,13 @@ class Transform(object):
 
     def chunker2string(self, chunker, fields, samples, mode='MergeSamples'):
         li = []
+        # 把NaN转换成-1
+        for i in range(chunker[1]):
+            for field in fields:
+                if isinstance(chunker[0][field][i], np.ndarray) and not isinstance(chunker[0][field][i][0], np.str):
+                    nanpos = np.isnan(chunker[0][field][i])
+                    chunker[0][field][i][nanpos] = -1.0
+
         if mode == 'MergeAll':
             for i in range(chunker[1]):
                 #basic
