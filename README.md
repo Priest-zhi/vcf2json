@@ -6,15 +6,15 @@ VCF2JSON, a standalone, cross-platform and freely available desktop software, wh
 
 ## A sample case 
 As described in figure 1, the first line in JSON file saves the header information of the original VCF file. The next line is an array, each element represents a row of data in VCF.
-![figure 1](https://github.com/Priest-zhi/vcf2json/edit/master/doc/figure1.jpg)
+![](https://github.com/Priest-zhi/vcf2json/raw/master/doc/figure1.jpg)
 
 ## Software framework
 The base framework of VCF2JSON is shown in figure 2.The core of VCF2JSON was built with python program. The framework of the GUI were designed and implemented with Electron (https://electronjs.org/) which using JavaScript, HTML and CSS to write cross-platform desktop application. The frontend and backend communicate with each other using zerorpc (http://www.zerorpc.io/). The software has been tested in several operating systems (UNIX, Mac and Windows).
-![figure 2](https://github.com/Priest-zhi/vcf2json/edit/master/doc/figure2.jpg)
+![](https://github.com/Priest-zhi/vcf2json/raw/master/doc/figure2.jpg)
 
 ## Application of VCF2JSON: a utility case
 The transform is initiated from the main page (Figure 3A), user open file dialog and select a VCF file, and then choose output directory. Besides, two JSON formats are available for the user to choose. The default JSON format is to merge annotation together, the other is the opposite. When user click “Go” button and wait a moment, they can get a JSON file at output directory. What’s more, by clicking the preview button, the user can preview the results of the transform, of course only the first two lines can be previewed (Figure 3B).
-![figure 3](https://github.com/Priest-zhi/vcf2json/edit/master/doc/figure3.jpg)
+![](https://github.com/Priest-zhi/vcf2json/raw/master/doc/figure3.jpg)
 
 ## 打包可能遇到的问题
 
