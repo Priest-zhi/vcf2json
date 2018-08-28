@@ -20,21 +20,21 @@ The transform is initiated from the main page (Figure 3A), user open file dialog
 
 ### Python
 
-* Pyinstaller打包出现UnicodeDecodeError: 'utf-8' codec can't decode byte 0xce in position
+* Open the command line in the root directory and enter 'chcp 65001' 
+> if you don't type, Pyinstaller will show "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xce in position"
 
-  在你打包的命令行中先输入chcp 65001 然后再输入打包命令。
-  
-  
-  
-* 缺少模块 gevent.__hub_local ....
-
-> 在 *.spec中添加
+* Secondly, run command: pyinstaller transform.spec --distpath=dist 
+> if you don't use .spec. Pyinstaller will show "lack module gevent.__hub_local ....", The solution is add this code to .spec:
+```
   hiddenimports=['gevent.__hub_local', 'gevent._local', 'gevent.__greenlet_primitives', 'gevent.__waiter', 'gevent.__hub_primitives', 'gevent._greenlet', 'gevent.__ident', 'gevent.libev.corecext', 'gevent.libuv.loop', 'gevent._event', 'gevent._queue', 'gevent.__semaphore', 'gevent.__imap'],
- 
-> 最后运行 pyinstaller transform.spec --distpath=dist
+```
+
   
 ### electron
 
-* 将    "packager": "electron-packager ./ transform --platform=win32  --arch=x64  --out=./Appout --overwrite", 加入到 scripts 
-   --arch中的x64表示64位 ia32表示32位
-* 运行命令 npm run-script packager 
+* run command: 
+  * windows x64 : npm run-script packager-64
+  * windows x86 : npm run-script packager-32
+> in package.json, scripts, 
+"packager-64": "electron-packager ./ transform --platform=win32  --arch=x64  --out=./Appout --overwrite", 加入到 scripts 
+   --arch=x64 means x64, ia32 means x86
