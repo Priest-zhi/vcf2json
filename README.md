@@ -16,9 +16,10 @@ The base framework of VCF2JSON is shown in figure 2.The core of VCF2JSON was bui
 The transform is initiated from the main page (Figure 3A), user open file dialog and select a VCF file, and then choose output directory. Besides, two JSON formats are available for the user to choose. The default JSON format is to merge annotation together, the other is the opposite. When user click “Go” button and wait a moment, they can get a JSON file at output directory. What’s more, by clicking the preview button, the user can preview the results of the transform, of course only the first two lines can be previewed (Figure 3B).
 ![](https://github.com/Priest-zhi/vcf2json/raw/master/doc/figure3.jpg)
 
-## 打包可能遇到的问题
+## how to package?
+The software is composed of Electron and Python, so it needs to be packaged separately.
 
-### Python
+### package Python
 
 * Open the command line in the root directory and enter 'chcp 65001' 
 > if you don't type, Pyinstaller will show "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xce in position"
@@ -30,11 +31,15 @@ The transform is initiated from the main page (Figure 3A), user open file dialog
 ```
 
   
-### electron
+### package Electron
 
 * run command: 
   * windows x64 : npm run-script packager-64
   * windows x86 : npm run-script packager-32
 > in package.json, scripts, 
-"packager-64": "electron-packager ./ transform --platform=win32  --arch=x64  --out=./Appout --overwrite", 加入到 scripts 
+"packager-64": "electron-packager ./ transform --platform=win32  --arch=x64  --out=./Appout --overwrite",
    --arch=x64 means x64, ia32 means x86
+
+### finally work
+* Create a new folder in Electron root directory, named "dist". Copy the transform.exe(windows name) generated from pyinstaller to dist
+* double click transform.exe in electron root directory
