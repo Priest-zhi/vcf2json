@@ -104,7 +104,8 @@ $(function () {
 function selectinputfile() {
   const {dialog} = require('electron').remote;
   console.log(dialog.showOpenDialog({properties: ['openFile'], filters: [
-      {name: 'vcf file', extensions: ['vcf']}
+      {name: 'vcf file', extensions: ['vcf','gz']}
+      // {name: 'gzip file', extensions: ['gz']}
     ]},(files) => {
     if (files) {
       $("#input_filepath").val(files);
@@ -144,11 +145,11 @@ function transformfile() {
       $('#progress-bar-transform').css('width', '100%');
       $('#progress-bar-transform').text('100%');
       if(error) {
-        $('#status').text(error);
-      } else {
-        $('#status')
-          .text("transform complete!");
-      }
+      $('#status').text(error);
+    } else {
+      $('#status')
+        .text("transform complete!");
+    }
     })
   }else if(mode === "bottom"){
     var fileName = $("#input_filepath").val();

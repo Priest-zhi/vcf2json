@@ -207,8 +207,8 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
 
     cores = multiprocessing.cpu_count()
     #processnum = max(int(cores / 2), 2)
-    #processnum = cores
-    processnum = 2
+    processnum = cores
+    #processnum = 2
     #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
 
     #自己调度迭代器 防止内存溢出

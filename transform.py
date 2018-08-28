@@ -19,48 +19,6 @@ import time
 import sys
 import zerorpc
 
-# sys.setrecursionlimit(50000)
-# # 使用pyinstaller 打包, 防止出现双倍进程
-# # Module multiprocessing is organized differently in Python 3.4+
-# try:
-#     # Python 3.4+
-#     if sys.platform.startswith('win'):
-#         import multiprocessing.popen_spawn_win32 as forking
-#     else:
-#         import multiprocessing.popen_fork as forking
-# except ImportError:
-#     import multiprocessing.forking as forking
-#
-# if sys.platform.startswith('win'):
-#     # First define a modified version of Popen.
-#     class _Popen(forking.Popen):
-#         def __init__(self, *args, **kw):
-#             if hasattr(sys, 'frozen'):
-#                 # We have to set original _MEIPASS2 value from sys._MEIPASS
-#                 # to get --onefile mode working.
-#                 os.putenv('_MEIPASS2', sys._MEIPASS)
-#             try:
-#                 super(_Popen, self).__init__(*args, **kw)
-#             finally:
-#                 if hasattr(sys, 'frozen'):
-#                     # On some platforms (e.g. AIX) 'os.unsetenv()' is not
-#                     # available. In those cases we cannot delete the variable
-#                     # but only set it to the empty string. The bootloader
-#                     # can handle this case.
-#                     if hasattr(os, 'unsetenv'):
-#                         os.unsetenv('_MEIPASS2')
-#                     else:
-#                         os.putenv('_MEIPASS2', '')
-
-
-    # Second override 'Popen' class with our modified version.
-    #forking.Popen = _Popen
-    #
-    # class Process(multiprocessing.Process):
-    #     _Popen = _Popen
-    #
-    # class Pool( multiprocessing.Pool):
-    #     Process = Process
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -214,33 +172,8 @@ class Transform(object):
 
         return
 
-
-    def vcf2json_multi(self, filepath_vcf, filepath_json, md5, mode):
-        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=50)
-
-        if os.path.exists(filepath_json):
-            os.remove(filepath_json)
-        #增加原vcf文件的头部信息, 用于逆向转换
-        self.addhead(headers[0], filepath_json)
-
-        tmpfile = "value_" + md5 + ".dat"
-        with open(tmpfile, "wb") as f:
-            pickle.dump(fields, f)
-            pickle.dump(samples, f)
-            pickle.dump(headers, f)
-            pickle.dump(filepath_json, f)
-
-        cores = multiprocessing.cpu_count()
-        #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
-        pool = multiprocessing.Pool(processes=max(int(cores / 2), 2))
-        pool.map(partial(self.IoOperat_multi, tmpfile, mode), chunks, chunksize=1)
-        pool.close()
-        pool.join()  # 主进程阻塞等待子进程的退出
-        os.remove(tmpfile)  # 删除该分片，节约空间
-        return
-
     def vcf2json_multi2(self, filepath_vcf, filepath_json, md5, mode):
-        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=50)
+        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=500)
 
         if os.path.exists(filepath_json):
             os.remove(filepath_json)
@@ -255,7 +188,8 @@ class Transform(object):
             pickle.dump(filepath_json, f)
 
         cores = multiprocessing.cpu_count()
-        processnum = max(int(cores / 2), 2)
+        #processnum = max(int(cores / 2), 2)
+        processnum = cores
         #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
 
         #自己调度迭代器 防止内存溢出
@@ -265,7 +199,7 @@ class Transform(object):
         for chunker in chunks:
             index+=1
             tmpchunks.append(chunker)
-            if index % processnum == 0:
+            if index % (processnum*50) == 0:
                 pool.map(partial(self.IoOperat_multi, tmpfile, mode), tmpchunks)
                 # time.sleep(10)
                 tmpchunks.clear()
@@ -280,17 +214,7 @@ class Transform(object):
     def dotranform(self, filepath_vcf, mode):
         file_json = os.path.splitext(filepath_vcf)[0] + ".json"
         self.vcf2json_multi2(filepath_vcf, file_json, "tmpdat", mode)
-        #self.vcf2json_Single(filepath_vcf, file_json, mode)
 
-        # if os.path.splitext(filepath_vcf)[1] == ".gz" or filesize_vcf <= 100 * 1024 * 1024:
-        #     # 100M文件以下使用单进程
-        #     # gzip压缩文件需要用单进程处理,原因未知
-        #     #self.vcf2json_Single(filepath_vcf, file_json)
-        # else:
-        #     self.vcf2json_multi(filepath_vcf, file_json, "tmpdat")
-        #     # 创建进程执行转换的原因, 可以并发处理请求.
-        #     # 转换函数会创建进程池, 使用文件进行参数传递, 为了让并发请求不共享这个文件, 所以此处创建进程
-        # return "complete"
 
     #with output path
     def dotransformWithOutPath(self, filepath_vcf, filepath_json, mode):
@@ -324,44 +248,47 @@ class Transform(object):
         result = {"vcf": vcfline, "json": recordstring}
         return result
 
-# try:
-#     # Python 3.4+
-#     if sys.platform.startswith('win'):
-#         import multiprocessing.popen_spawn_win32 as forking
-#     else:
-#         import multiprocessing.popen_fork as forking
-# except ImportError:
-#     import multiprocessing.forking as forking
-#
-# if sys.platform.startswith('win'):
-#     # First define a modified version of Popen.
-#     class _Popen(forking.Popen):
-#         def __init__(self, *args, **kw):
-#             if hasattr(sys, 'frozen'):
-#                 # We have to set original _MEIPASS2 value from sys._MEIPASS
-#                 # to get --onefile mode working.
-#                 os.putenv('_MEIPASS2', sys._MEIPASS)
-#             try:
-#                 super(_Popen, self).__init__(*args, **kw)
-#             finally:
-#                 if hasattr(sys, 'frozen'):
-#                     # On some platforms (e.g. AIX) 'os.unsetenv()' is not
-#                     # available. In those cases we cannot delete the variable
-#                     # but only set it to the empty string. The bootloader
-#                     # can handle this case.
-#                     if hasattr(os, 'unsetenv'):
-#                         os.unsetenv('_MEIPASS2')
-#                     else:
-#                         os.putenv('_MEIPASS2', '')
+try:
+    # Python 3.4+
+    if sys.platform.startswith('win'):
+        import multiprocessing.popen_spawn_win32 as forking
+    else:
+        import multiprocessing.popen_fork as forking
+except ImportError:
+    import multiprocessing.forking as forking
 
+if sys.platform.startswith('win'):
+    # First define a modified version of Popen.
+    class _Popen(forking.Popen):
+        def __init__(self, *args, **kw):
+            if hasattr(sys, 'frozen'):
+                # We have to set original _MEIPASS2 value from sys._MEIPASS
+                # to get --onefile mode working.
+                os.putenv('_MEIPASS2', sys._MEIPASS)
+            try:
+                super(_Popen, self).__init__(*args, **kw)
+            finally:
+                if hasattr(sys, 'frozen'):
+                    # On some platforms (e.g. AIX) 'os.unsetenv()' is not
+                    # available. In those cases we cannot delete the variable
+                    # but only set it to the empty string. The bootloader
+                    # can handle this case.
+                    if hasattr(os, 'unsetenv'):
+                        os.unsetenv('_MEIPASS2')
+                    else:
+                        os.putenv('_MEIPASS2', '')
+    # Second override 'Popen' class with our modified version.
+    forking.Popen = _Popen
+
+    # class Process(multiprocessing.Process):
+    #     _Popen = _Popen
+    #
+    #
+    # class Pool(multiprocessing.Pool):
+    #     Process = Process
 
 if __name__ == "__main__":
     multiprocessing.freeze_support()
     s = zerorpc.Server(Transform(), heartbeat=None)
     s.bind("tcp://0.0.0.0:42142")
     s.run()
-# if __name__ == "__main__":
-#     myinstance = Transform()
-#     filepath = "F:/data/VCF_Files/ALL.chrY.phase3_integrated_v2a.20130502.genotypes.vcf"
-#     #myinstance.dotranform(sys.argv[1])
-#     myinstance.dotranform(filepath)
