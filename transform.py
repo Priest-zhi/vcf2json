@@ -49,6 +49,7 @@ class Transform(object):
     def addhead(self, header, filepath_json):
         record_head = []
         for line in header:
+            line = line.strip('\n')
             record_head.append(line)
         record = {
            "header": record_head

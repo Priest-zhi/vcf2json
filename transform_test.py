@@ -49,6 +49,7 @@ def RenameJsonKey(strJson):
 def addhead(header, filepath_json):
     record_head = []
     for line in header:
+        line = line.strip('\n')
         record_head.append(line)
     record = {
        "header": record_head
@@ -232,7 +233,8 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
     time_end = time.time()
     time_cost = time_end - time_start
     dir = os.path.splitext(filepath_vcf)[0]
-    statisticFile = dir + '.txt'
+    #statisticFile = dir + '.txt'
+    statisticFile = "vcf2json_results.txt"
     with open(statisticFile, mode='a') as fp:
         result = (filepath_vcf + '\t' + 'chrom: ' + '{0}' + '\t' + 'info: ' + '{1}' + '\t' + 'sample: ' + '{2}' + '\t' +'total cost: ' + '{3}' + '\n').format(statisticArr[0], statisticArr[1], samples.size, time_cost)
         fp.write(result)
@@ -280,8 +282,13 @@ def preview(filepath_vcf, mode):
 
 if __name__ == "__main__":
     filepath = sys.argv[1]
+    with open(filepath, 'r') as f:
+        lines = f.readlines()
+    for line in lines:
+        line = line.strip('\n')
+        dotranform(line, mode='MergeAll')
     #transform = Transform()
-    dotranform(filepath, mode='MergeAll')
+    #dotranform(filepath, mode='MergeAll')
 
 
 
