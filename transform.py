@@ -100,8 +100,8 @@ class Transform(object):
                     }
                     recordsample2 = {
                         k_field[9:]: [chunker[0][k_field][i][j][n] for n in
-                                      range(chunker[0][k_field][i][j].size)] if type(
-                            chunker[0][k_field][i][j]) == np.ndarray else chunker[0][k_field][i][j] for k_field in
+                                      range(chunker[0][k_field][i][j].size)] if isinstance(
+                            chunker[0][k_field][i][j], np.ndarray) else chunker[0][k_field][i][j] for k_field in
                         fields if "calldata/" in k_field
                     }
                     recordsample = dict(recordsample1, **recordsample2)
@@ -115,8 +115,8 @@ class Transform(object):
         elif mode == 'MergeSamples':
             for i in range(chunker[1]):
                 recorddict1 = {
-                    k_field[9:]: [chunker[0][k_field][i][m] for m in range(chunker[0][k_field][i].size)] if type(
-                        chunker[0][k_field][i]) == np.ndarray else chunker[0][k_field][i] for k_field in fields if
+                    k_field[9:]: [chunker[0][k_field][i][m] for m in range(chunker[0][k_field][i].size)] if isinstance(
+                        chunker[0][k_field][i], np.ndarray) else chunker[0][k_field][i] for k_field in fields if
                     'variants/' in k_field and k_field not in  ['variants/numalt', 'variants/svlen', 'variants/is_snp']
                 }
                 recordsamples = []
@@ -126,8 +126,8 @@ class Transform(object):
                     }
                     recordsample2 = {
                         k_field[9:]: [chunker[0][k_field][i][j][n] for n in
-                                      range(chunker[0][k_field][i][j].size)] if type(
-                            chunker[0][k_field][i][j]) == np.ndarray else chunker[0][k_field][i][j] for k_field in
+                                      range(chunker[0][k_field][i][j].size)] if isinstance(
+                            chunker[0][k_field][i][j], np.ndarray) else chunker[0][k_field][i][j] for k_field in
                         fields if "calldata/" in k_field
                     }
                     recordsample = dict(recordsample1, **recordsample2)

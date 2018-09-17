@@ -9,7 +9,7 @@ import numpy as np
 import json
 import multiprocessing
 import pickle
-from lockfile import LockFile
+
 from pymongo import MongoClient
 import re
 import zipfile
@@ -18,6 +18,10 @@ from wsgiref.util import FileWrapper
 from functools import partial
 import time
 import sys
+if sys.platform.startswith('linux'):
+    import fcntl
+else:
+    from lockfile import LockFile
 #import zerorpc
 
 class MyEncoder(json.JSONEncoder):
@@ -62,6 +66,7 @@ def addhead(header, filepath_json):
 def chunker2string(chunker, fields, samples, mode='MergeSamples'):
     li = []
     infoNum = 0
+    infoSpecial = 0
     #把NaN转换成-1
     for i in range(chunker[1]):
         for field in fields:
@@ -96,6 +101,8 @@ def chunker2string(chunker, fields, samples, mode='MergeSamples'):
             }
 
             infoNum += len(recorddict3['Info'])
+            if recorddict3['Info']['AC'][0] == 1:
+                infoSpecial += 1
 
             #Samples
             recordsamples = []
@@ -105,8 +112,8 @@ def chunker2string(chunker, fields, samples, mode='MergeSamples'):
                 }
                 recordsample2 = {
                     k_field[9:]: [chunker[0][k_field][i][j][n] for n in
-                                  range(chunker[0][k_field][i][j].size)] if type(
-                        chunker[0][k_field][i][j]) == np.ndarray else chunker[0][k_field][i][j] for k_field in
+                                  range(chunker[0][k_field][i][j].size)] if isinstance(
+                        chunker[0][k_field][i][j], np.ndarray) else chunker[0][k_field][i][j] for k_field in
                     fields if "calldata/" in k_field
                 }
                 recordsample = dict(recordsample1, **recordsample2)
@@ -123,8 +130,8 @@ def chunker2string(chunker, fields, samples, mode='MergeSamples'):
     elif mode == 'MergeSamples':
         for i in range(chunker[1]):
             recorddict1 = {
-                k_field[9:]: [chunker[0][k_field][i][m] for m in range(chunker[0][k_field][i].size)] if type(
-                    chunker[0][k_field][i]) == np.ndarray else chunker[0][k_field][i] for k_field in fields if
+                k_field[9:]: [chunker[0][k_field][i][m] for m in range(chunker[0][k_field][i].size)] if isinstance(
+                    chunker[0][k_field][i], np.ndarray) else chunker[0][k_field][i] for k_field in fields if
                 'variants/' in k_field and k_field not in  ['variants/numalt', 'variants/svlen', 'variants/is_snp']
             }
             recordsamples = []
@@ -134,8 +141,8 @@ def chunker2string(chunker, fields, samples, mode='MergeSamples'):
                 }
                 recordsample2 = {
                     k_field[9:]: [chunker[0][k_field][i][j][n] for n in
-                                  range(chunker[0][k_field][i][j].size)] if type(
-                        chunker[0][k_field][i][j]) == np.ndarray else chunker[0][k_field][i][j] for k_field in
+                                  range(chunker[0][k_field][i][j].size)] if isinstance(
+                        chunker[0][k_field][i][j], np.ndarray) else chunker[0][k_field][i][j] for k_field in
                     fields if "calldata/" in k_field
                 }
                 recordsample = dict(recordsample1, **recordsample2)
@@ -148,7 +155,7 @@ def chunker2string(chunker, fields, samples, mode='MergeSamples'):
             li.append(recorddict)
 
     recordstring = json.dumps(li, cls=MyEncoder) + '\n'
-    return recordstring, infoNum
+    return recordstring, infoNum, infoSpecial
 
 
 def IoOperat_multi(tmpfile, mode, statisticArr, chunker):
@@ -158,14 +165,23 @@ def IoOperat_multi(tmpfile, mode, statisticArr, chunker):
         samples = pickle.load(f)
         headers = pickle.load(f)
         filepath_json = pickle.load(f)
-    recordstring, infonum = chunker2string(chunker, fields, samples, mode)
-    lock = LockFile(filepath_json)
-    lock.acquire()
-    with open(filepath_json, "a") as fp:
-        statisticArr[0] += chunker[1]
-        statisticArr[1] += infonum
-        fp.write(recordstring)
-    lock.release()
+    recordstring, infonum, infoSpecial = chunker2string(chunker, fields, samples, mode)
+    if sys.platform.startswith('linux'):
+        with open(filepath_json, "a") as fp:
+            fcntl.flock(fp.fileno(), fcntl.LOCK_EX)
+            statisticArr[0] += chunker[1]
+            statisticArr[1] += infonum
+            statisticArr[2] += infoSpecial
+            fp.write(recordstring)
+    else:
+        lock = LockFile(filepath_json)
+        lock.acquire()
+        with open(filepath_json, "a") as fp:
+            statisticArr[0] += chunker[1]
+            statisticArr[1] += infonum
+            statisticArr[2] += infoSpecial
+            fp.write(recordstring)
+        lock.release()
     return
 
 
@@ -188,16 +204,14 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
     #统计数据
     time_start = time.time()
     manager = multiprocessing.Manager()
-    statisticArr = manager.Array("i", [0, 0])
+    statisticArr = manager.Array("i", [0, 0, 0])
 
     fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=500)
-
+    print(filepath_vcf)
     if os.path.exists(filepath_json):
         os.remove(filepath_json)
     #增加原vcf文件的头部信息, 用于逆向转换
     addhead(headers[0], filepath_json)
-
-
 
     tmpfile = "value_" + md5 + ".dat"
     with open(tmpfile, "wb") as f:
@@ -208,7 +222,7 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
 
     cores = multiprocessing.cpu_count()
     #processnum = max(int(cores / 2), 2)
-    processnum = cores
+    processnum = min(cores, 20)
     #processnum = 2
     #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
 
@@ -216,35 +230,44 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
     pool = multiprocessing.Pool(processes=processnum)
     index = 0
     tmpchunks = []
+    i = 0
     for chunker in chunks:
         index+=1
         tmpchunks.append(chunker)
-        if index % (processnum*50) == 0:
+        if index % (processnum*10) == 0:
+            i += 1
+            print(("{0} - 1").format(i))
             pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
+            print(("{0} - 2").format(i))
+            #pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
             # time.sleep(10)
             tmpchunks.clear()
-
+    print("last section")
     pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
     pool.close()
     pool.join()  # 主进程阻塞等待子进程的退出
-    os.remove(tmpfile)  # 删除该分片，节约空间
+    os.remove(tmpfile)  # 删除临时文件,节约空间
 
     #保存统计数据
+    filesize = os.path.getsize(filepath_json)
     time_end = time.time()
     time_cost = time_end - time_start
     dir = os.path.splitext(filepath_vcf)[0]
     #statisticFile = dir + '.txt'
     statisticFile = "vcf2json_results.txt"
     with open(statisticFile, mode='a') as fp:
-        result = (filepath_vcf + '\t' + 'chrom: ' + '{0}' + '\t' + 'info: ' + '{1}' + '\t' + 'sample: ' + '{2}' + '\t' +'total cost: ' + '{3}' + '\n').format(statisticArr[0], statisticArr[1], samples.size, time_cost)
+        result = (filepath_vcf + '\t' + 'chrom: ' + '{0}' + '\t' + 'info: ' + '{1}' + '\t' + 'sample: ' + '{2}' + '\t' +'total cost: ' + '{3}' +
+                  '\t' + 'jsonfilesize: ' + '{4}' + '\n' + 'infoSpecial: {5}').format(statisticArr[0], statisticArr[1], samples.size, time_cost, filesize, statisticArr[2])
         fp.write(result)
-
+    os.remove(filepath_json)  # 删除临时文件,节约空间
 
 
 def dotranform(filepath_vcf, mode):
-    file_json = os.path.splitext(filepath_vcf)[0] + ".json"
+    basename = os.path.basename(filepath_vcf)
+    file_json = os.path.splitext(basename)[0] + ".json"
+    #file_json = os.path.splitext(filepath_vcf)[0] + ".json"
     vcf2json_multi2(filepath_vcf, file_json, "tmpdat", mode)
-    #self.vcf2json_Single(filepath_vcf, file_json, mode)
+    #vcf2json_Single(filepath_vcf, file_json, mode)
 
 
 #with output path
@@ -281,18 +304,31 @@ def preview(filepath_vcf, mode):
 
 
 if __name__ == "__main__":
-    filepath = sys.argv[1]
-    with open(filepath, 'r') as f:
-        lines = f.readlines()
-    for line in lines:
-        line = line.strip('\n')
-        dotranform(line, mode='MergeAll')
+    type = sys.argv[1]
+    filepath = sys.argv[2]
+    if (type == '-t'):  #input a vcf file
+        #filepath = sys.argv[2]
+        dotranform(filepath, mode='MergeAll')
+    elif (type == '-r'):    #input a txt with a list of vcf files
+        #listfilepath = sys.argv[2]
+        with open(filepath, 'r') as f:
+            lines = f.readlines()
+        for line in lines:
+            line = line.strip('\n')
+            dotranform(line, mode='MergeAll')
+    elif (type == '-f'):    #input a folder, and then transform all vcf files into json
+        files = os.listdir(filepath)
+        for file in files:
+            file_ap = os.path.join(filepath, file)
+            if not os.path.isdir(file_ap):
+                if os.path.splitext(file_ap)[1] == '.gz':
+                    dotranform(file_ap, mode='MergeAll')
+
+    # filepath = sys.argv[1]
+    # with open(filepath, 'r') as f:
+    #     lines = f.readlines()
+    # for line in lines:
+    #     line = line.strip('\n')
+    #     dotranform(line, mode='MergeAll')
     #transform = Transform()
     #dotranform(filepath, mode='MergeAll')
-
-
-
-    # multiprocessing.freeze_support()
-    # s = zerorpc.Server(Transform(), heartbeat=None)
-    # s.bind("tcp://0.0.0.0:42142")
-    # s.run()
