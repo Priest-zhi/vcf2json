@@ -1,24 +1,29 @@
 from bson import Code
-from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+# from django.shortcuts import render
+# from django.http import HttpResponse, JsonResponse
+# from django.views.decorators.csrf import csrf_exempt
+# from django.http import StreamingHttpResponse
+# from pymongo import MongoClient
 import os
 import allel
 import numpy as np
 import json
 import multiprocessing
 import pickle
-from lockfile import LockFile
-from pymongo import MongoClient
+# from lockfile import LockFile
+
 import re
 import zipfile
-from django.http import StreamingHttpResponse
+
 from wsgiref.util import FileWrapper
 from functools import partial
 import time
 import sys
-import zerorpc
-
+# import zerorpc
+if sys.platform.startswith('linux'):
+    import fcntl
+else:
+    from lockfile import LockFile
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -151,11 +156,27 @@ class Transform(object):
             headers = pickle.load(f)
             filepath_json = pickle.load(f)
         recordstring = self.chunker2string(chunker, fields, samples, mode)
-        lock = LockFile(filepath_json)
-        lock.acquire()
-        with open(filepath_json, "a") as fp:
-            fp.write(recordstring)
-        lock.release()
+        if sys.platform.startswith('linux'):
+            with open(filepath_json, "a") as fp:
+                fcntl.flock(fp.fileno(), fcntl.LOCK_EX)
+                statisticArr[0] += chunker[1]
+                statisticArr[1] += infonum
+                statisticArr[2] += infoSpecial
+                fp.write(recordstring)
+        else:
+            lock = LockFile(filepath_json)
+            lock.acquire()
+            with open(filepath_json, "a") as fp:
+                statisticArr[0] += chunker[1]
+                statisticArr[1] += infonum
+                statisticArr[2] += infoSpecial
+                fp.write(recordstring)
+            lock.release()
+        # lock = LockFile(filepath_json)
+        # lock.acquire()
+        # with open(filepath_json, "a") as fp:
+        #     fp.write(recordstring)
+        # lock.release()
         return
 
 

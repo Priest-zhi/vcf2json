@@ -9,7 +9,7 @@ import numpy as np
 import json
 import multiprocessing
 import pickle
-
+import copy
 from pymongo import MongoClient
 import re
 import zipfile
@@ -222,28 +222,47 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
 
     cores = multiprocessing.cpu_count()
     #processnum = max(int(cores / 2), 2)
-    processnum = min(cores, 20)
-    #processnum = 2
-    #pool = multiprocessing.Pool(processes=max(int(cores/2), 2))
+    #processnum = min(cores, 20)
+    processnum = int(cores / 2)
 
     #自己调度迭代器 防止内存溢出
     pool = multiprocessing.Pool(processes=processnum)
     index = 0
     tmpchunks = []
     i = 0
+    # for chunker in chunks:
+    #     index+=1
+    #     tmpchunks.append(chunker)
+    #     if index % (processnum*10) == 0:
+    #         # i += 1
+    #         # print(("{0} - 1").format(i))
+    #         pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
+    #         #print(("{0} - 2").format(i))
+    #         #pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
+    #         # time.sleep(10)
+    #         tmpchunks.clear()
+    first = True
+    realchunks=[]
+
     for chunker in chunks:
         index+=1
         tmpchunks.append(chunker)
         if index % (processnum*10) == 0:
-            i += 1
-            print(("{0} - 1").format(i))
-            pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
-            print(("{0} - 2").format(i))
-            #pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
-            # time.sleep(10)
+            if not first:
+                AppResult.get()
+                realchunks.clear()
+            realchunks = copy.deepcopy(tmpchunks)
             tmpchunks.clear()
-    print("last section")
+            first=False
+            AppResult = pool.map_async(partial(IoOperat_multi, tmpfile, mode, statisticArr), realchunks)
+
+    if "AppResult" in locals().keys():
+        AppResult.get()
+    #print("last section")
     pool.map(partial(IoOperat_multi, tmpfile, mode, statisticArr), tmpchunks)
+    tmpchunks.clear()
+    if realchunks:
+        realchunks.clear()
     pool.close()
     pool.join()  # 主进程阻塞等待子进程的退出
     os.remove(tmpfile)  # 删除临时文件,节约空间
@@ -259,7 +278,7 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
         result = (filepath_vcf + '\t' + 'chrom: ' + '{0}' + '\t' + 'info: ' + '{1}' + '\t' + 'sample: ' + '{2}' + '\t' +'total cost: ' + '{3}' +
                   '\t' + 'jsonfilesize: ' + '{4}' + '\n' + 'infoSpecial: {5}').format(statisticArr[0], statisticArr[1], samples.size, time_cost, filesize, statisticArr[2])
         fp.write(result)
-    os.remove(filepath_json)  # 删除临时文件,节约空间
+    os.remove(filepath_json)  # 删除文件,节约空间
 
 
 def dotranform(filepath_vcf, mode):
