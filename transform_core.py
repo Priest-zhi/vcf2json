@@ -1,4 +1,4 @@
-from bson import Code
+#from bson import Code
 import os
 import allel
 import numpy as np
@@ -52,12 +52,27 @@ class TransformV2J(object):
             line = line.strip('\n')
             record_head.append(line)
         record = {
-           "header": record_head
+           "Header": record_head
         }
         with open(filepath_json, 'a') as fp:
-            recordstring = json.dumps(record, cls=MyEncoder) + '\n'
+            recordstring = json.dumps(record, cls=MyEncoder)
+            recordstring = recordstring[:-1] + ',' + '\n'
             fp.write(recordstring)
+            fp.write('"Data":[')
         return
+
+    #delete the last comma, and add the bracket
+    def addEnd(self, filepath_json):
+        if sys.platform.startswith('win'):
+            offsize = -3
+        else:
+            offsize = -2
+        with open(filepath_json, 'rb+') as filehandle:
+            #delete \n and ,
+            filehandle.seek(offsize, os.SEEK_END)
+            filehandle.truncate()
+        with open(filepath_json, 'a') as fp:
+            fp.write(']}')
 
     def chunker2string(self, chunker, fields, samples, mode='MergeSamples'):
         li = []
@@ -139,7 +154,9 @@ class TransformV2J(object):
                 recorddict = dict(recorddict1, **recorddict2)
                 li.append(recorddict)
 
-        recordstring = json.dumps(li, cls=MyEncoder) + '\n'
+        recordstring = json.dumps(li, cls=MyEncoder)
+        recordstring = recordstring[1:-1]   #delete first and last brackets.  "[...]" ----> "..."
+        recordstring = recordstring + ','+ '\n'
         return recordstring
 
 
@@ -179,7 +196,7 @@ class TransformV2J(object):
         return
 
     def vcf2json_multi2(self, filepath_vcf, filepath_json, md5, mode):
-        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=500)
+        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=1)
 
         if os.path.exists(filepath_json):
             os.remove(filepath_json)
@@ -223,6 +240,8 @@ class TransformV2J(object):
             realchunks.clear()
         pool.close()
         pool.join()  # 主进程阻塞等待子进程的退出
+        #delete two last character '\n' and ',' and add '}'
+        self.addEnd(filepath_json)
         os.remove(tmpfile)  # 删除临时文件,节约空间
 
 

@@ -8,7 +8,10 @@
     "start": "electron-forge start",
     "packager-64": "electron-packager ./ transform --platform=win32  --arch=x64  --out=./Appout --overwrite",
     "packager-32": "electron-packager ./ transform --platform=win32  --arch=ia32  --out=./Appout --overwrite",
+    "packageLinux-64": "electron-packager ./ transform --platform=linux --arch=x64 --out=./Appout --overwrite",
+    "packageOS-64": "electron-packager ./ transform --platform=darwin --arch=x64 --out=./Appout --overwrite",
     "make": "electron-forge make",
+
     "publish": "electron-forge publish",
     "lint": "eslint src --color"
 

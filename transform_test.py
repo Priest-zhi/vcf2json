@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-from bson import Code
+#from bson import Code
 # from django.shortcuts import render
 # from django.http import HttpResponse, JsonResponse
 # from django.views.decorators.csrf import csrf_exempt
@@ -10,7 +10,7 @@ import json
 import multiprocessing
 import pickle
 import copy
-from pymongo import MongoClient
+#from pymongo import MongoClient
 import re
 import zipfile
 #from django.http import StreamingHttpResponse
@@ -101,8 +101,12 @@ def chunker2string(chunker, fields, samples, mode='MergeSamples'):
             }
 
             infoNum += len(recorddict3['Info'])
-            if recorddict3['Info']['AC'][0] == 1:
-                infoSpecial += 1
+            try:
+                if recorddict3['Info']['AC'][0] == 1:
+                    infoSpecial += 1
+            except Exception as e:
+                pass
+
 
             #Samples
             recordsamples = []
@@ -278,7 +282,7 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
         result = (filepath_vcf + '\t' + 'chrom: ' + '{0}' + '\t' + 'info: ' + '{1}' + '\t' + 'sample: ' + '{2}' + '\t' +'total cost: ' + '{3}' +
                   '\t' + 'jsonfilesize: ' + '{4}' + '\n' + 'infoSpecial: {5}').format(statisticArr[0], statisticArr[1], samples.size, time_cost, filesize, statisticArr[2])
         fp.write(result)
-    os.remove(filepath_json)  # 删除文件,节约空间
+    #os.remove(filepath_json)  # 删除文件,节约空间
 
 
 def dotranform(filepath_vcf, mode):
