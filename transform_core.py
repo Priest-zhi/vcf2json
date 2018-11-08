@@ -1,4 +1,3 @@
-#from bson import Code
 import os
 import allel
 import numpy as np
@@ -63,6 +62,7 @@ class TransformV2J(object):
 
     #delete the last comma, and add the bracket
     def addEnd(self, filepath_json):
+        # in win platform is \r\n; in linux is \n; in os is \r
         if sys.platform.startswith('win'):
             offsize = -3
         else:
@@ -180,7 +180,7 @@ class TransformV2J(object):
             lock.release()
         return
 
-
+    #useless function. just for test
     def vcf2json_Single(self, filepath_vcf, filepath_json, mode):
         fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['*'], chunk_length=50)
 
@@ -196,7 +196,7 @@ class TransformV2J(object):
         return
 
     def vcf2json_multi2(self, filepath_vcf, filepath_json, md5, mode):
-        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=1)
+        fields, samples, headers, chunks = allel.iter_vcf_chunks(filepath_vcf, fields=['variants/*', 'calldata/*'],chunk_length=500)
 
         if os.path.exists(filepath_json):
             os.remove(filepath_json)
