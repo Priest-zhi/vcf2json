@@ -22,7 +22,8 @@ The transform is initiated from the main page (Figure 3A), user open file dialog
 ## how to package?
 The software is composed of Electron and Python, so it needs to be packaged separately.
 
-### package Python
+### windows
+#### package Python
 
 * Open the command line in the root directory and enter 'chcp 65001' 
 > if you don't type, Pyinstaller will show "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xce in position"
@@ -34,7 +35,7 @@ The software is composed of Electron and Python, so it needs to be packaged sepa
 ```
 
   
-### package Electron
+#### package Electron
 
 * run command: 
   * windows x64 : npm run-script packager-64
@@ -43,6 +44,11 @@ The software is composed of Electron and Python, so it needs to be packaged sepa
 "packager-64": "electron-packager ./ transform --platform=win32  --arch=x64  --out=./Appout --overwrite",
    --arch=x64 means x64, ia32 means x86
 
-### finally work
+#### finally work
 * Create a new folder in Electron root directory, named "dist". Copy the transform.exe(windows name) generated from pyinstaller to dist
 * double click transform.exe in electron root directory (named APPout)
+
+### linux
+coming soon...
+### OS
+coming soon...
