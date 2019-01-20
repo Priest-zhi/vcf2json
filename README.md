@@ -19,6 +19,28 @@ The transform is initiated from the main page (Figure 3A), user open file dialog
 
 ![](https://github.com/Priest-zhi/vcf2json/raw/master/doc/figure3.jpg)
 
+## how to run
+* For running the code Python >= 3.5 is required.
+* Git clone code
+* Python
+  > pip install numpy
+  >
+  > pip install -r requirements.txt
+  >
+  > pip install zerorpc
+  >
+* nodejs
+  * install package
+  > npm install electron
+  >
+  > npm install
+  * install zeromq
+  > npm install zeromq
+  * install zerorpc
+  > npm install zerorpc
+* Run
+  > npm start
+
 ## how to package?
 The software is composed of Electron and Python, so it needs to be packaged separately.
 
@@ -49,6 +71,18 @@ The software is composed of Electron and Python, so it needs to be packaged sepa
 * double click transform.exe in electron root directory (named APPout)
 
 ### linux
-coming soon...
+#### package Python
+  > pyinstaller transform.spec --distpath=dist 
+#### package Electron
+  > npm run-script packageLinux-64
+#### finally work
+* Create a new folder in Electron root directory, named "dist". Copy the transform.exe(windows name) generated from pyinstaller to dist
+* double click transform.exe in electron root directory (named APPout)
 ### OS
-coming soon...
+#### package Python
+  > pyinstaller transform.spec --distpath=dist 
+#### package Electron
+  > npm run-script packageOS-64
+#### finally work
+* Create a new folder in Electron root directory, named "dist". Copy the transform.exe(windows name) generated from pyinstaller to dist
+* double click transform.exe in electron root directory (named APPout)
