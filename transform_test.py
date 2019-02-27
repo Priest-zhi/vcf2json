@@ -225,9 +225,9 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
         pickle.dump(filepath_json, f)
 
     cores = multiprocessing.cpu_count()
-    #processnum = max(int(cores / 2), 2)
+    processnum = max(int(cores / 2), 2)
     #processnum = min(cores, 20)
-    processnum = int(cores / 2)
+    #processnum = int(cores / 2)
 
     #自己调度迭代器 防止内存溢出
     pool = multiprocessing.Pool(processes=processnum)
@@ -280,9 +280,9 @@ def vcf2json_multi2(filepath_vcf, filepath_json, md5, mode):
     statisticFile = "vcf2json_results.txt"
     with open(statisticFile, mode='a') as fp:
         result = (filepath_vcf + '\t' + 'chrom: ' + '{0}' + '\t' + 'info: ' + '{1}' + '\t' + 'sample: ' + '{2}' + '\t' +'total cost: ' + '{3}' +
-                  '\t' + 'jsonfilesize: ' + '{4}' + '\n' + 'infoSpecial: {5}').format(statisticArr[0], statisticArr[1], samples.size, time_cost, filesize, statisticArr[2])
+                  '\t' + 'jsonfilesize: ' + '{4}' + 'infoSpecial: {5}' + '\n').format(statisticArr[0], statisticArr[1], samples.size, time_cost, filesize, statisticArr[2])
         fp.write(result)
-    #os.remove(filepath_json)  # 删除文件,节约空间
+    os.remove(filepath_json)  # 删除文件,节约空间
 
 
 def dotranform(filepath_vcf, mode):

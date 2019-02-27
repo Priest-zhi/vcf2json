@@ -211,7 +211,8 @@ class TransformV2J(object):
             pickle.dump(filepath_json, f)
 
         cores = multiprocessing.cpu_count()
-        processnum = int(cores / 2)
+        #processnum = int(cores / 2)
+        processnum = max(int(cores / 2), 2)
 
         # 自己调度迭代器 防止内存溢出
         pool = multiprocessing.Pool(processes=processnum)
